@@ -1,0 +1,39 @@
+h1 {
+  font-size: 80px;
+  text-align: center; }
+
+.table {
+  margin-top: 1rem; }
+
+#AddNewLine {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px; }
+
+#AddNewLine:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s; }
+
+#priority {
+  background-color: red;
+  border-radius: 50px;
+  color: white;
+  text-align: center; }
+
+#deleteButton {
+  background-color: red;
+  color: black;
+  padding: 0.2rem;
+  width: 5rem;
+  border: none;
+  border-radius: 10px; }
+
+#deleteButton:hover {
+  background-color: black;
+  color: red;
+  transition: 0.5s; }
+
+/*# sourceMappingURL=style.css.map */
