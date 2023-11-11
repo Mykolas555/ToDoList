@@ -5,8 +5,11 @@ h1 {
 .table {
   margin-top: 1rem; }
 
+#tablebody {
+  text-align: center; }
+
 #AddNewLine {
-  background-color: white;
+  background-color: #a5a5a5;
   color: black;
   padding: 1rem;
   border: none;
@@ -17,13 +20,15 @@ h1 {
   color: white;
   transition: 0.5s; }
 
-#priority {
+#priority p {
   background-color: red;
-  border-radius: 50px;
   color: white;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 10px;
   text-align: center; }
 
-#deleteButton {
+.deleteButton {
   background-color: red;
   color: black;
   padding: 0.2rem;
@@ -31,9 +36,12 @@ h1 {
   border: none;
   border-radius: 10px; }
 
-#deleteButton:hover {
+.deleteButton:hover {
   background-color: black;
   color: red;
   transition: 0.5s; }
+
+#buttonCheck {
+  width: 3rem; }
 
 /*# sourceMappingURL=style.css.map */

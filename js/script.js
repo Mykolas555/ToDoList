@@ -1,58 +1,33 @@
-let addNewLineButton = document.getElementById('AddNewLine');
-let deleteButtons = document.querySelectorAll('#deleteButton');
-let tbody = document.querySelector('tbody');
-let default_image = ['/images/square-check-solid.svg'];
-let check = document.querySelector('#check');
+let addNewLineButton = document.querySelector('#AddNewLine');
+let deleteButton = document.querySelectorAll('.deleteButton');
+let tableBody = document.getElementById('tableBody');
+let subjectElement = document.querySelector('.subject');
+let undoneImage = ['../images/square-check-regular.svg'];
+let doneImage = ['../images/square-check-solid.svg'];
 
-window.addEventListener('load', function () {
-  let firstRow = tbody.querySelector('tr');
-  let modifiedOn = firstRow.querySelector('#modified');
-  modifiedOn.textContent = new Date().toLocaleString();
-  let imgElement = document.createElement('img');
-  imgElement.src = '../images/square-check-regular.svg';
-  firstRow.querySelector('#check').appendChild(imgElement);
-  imgElement.addEventListener('dblclick', () => {
-    imgElement.src = default_image;
-});
-});
-
-function createNewLine(){
-  let cloneRow = tbody.querySelector('tr').cloneNode(true);
-  cloneRow.querySelectorAll('input').forEach(function (input) {
-    input.value = '';
-  });
-  let modifiedOn = cloneRow.querySelector('#modified');
-  modifiedOn.textContent = new Date().toLocaleString();
-  tbody.appendChild(cloneRow);
+//creating new row and deleting row when press delete button, also changing img file
+//from undone to done and underline the subject
+function createNewLine() {
+  let row = document.getElementById("firstRow");
+  let table = document.getElementById("tableBody");
+  let newRow = row.cloneNode(true);
+  table.appendChild(newRow);
+  //adding the delete row option
+  let deleteButton = newRow.querySelector('.deleteButton');
+    deleteButton.addEventListener('click', () => {
+      table.removeChild(newRow);
+    });
+  //changing from undone to done
+  let buttonCheck = newRow.querySelector('#buttonCheck');
+  let img = buttonCheck.querySelector('img');
+  img.src = undoneImage;
+  img.addEventListener('dblclick', () => {
+    img.src = doneImage;
+    subjectElement.style.textDecoration = 'line-through';
+    }
+  );
 }
-
-tbody.addEventListener('click', function(event) {
-  let target = event.target;
-  if (target.id === 'deleteButton') {
-      if (tbody.querySelectorAll('tr').length > 1) {
-          let row = target.closest('tr');
-          tbody.removeChild(row);
-      } else {
-          alert('Cannot delete the only row.');
-      }
-  }
-});
-
-function doneSubject(){
-  let allrows = document.querySelectorAll('tr');
-  let imgElement = allrows.querySelectorAll('#check');
-  imgElement.addEventListener('dblclick', () => {
-    imgElement.src = default_image;
-})
-}
-
 
 addNewLineButton.addEventListener('click', () => {
   createNewLine();
-});
-
-deleteButtons.forEach(button => {
-  button.addEventListener('click', (event) => {
-    deleteRow(event);
-  });
 });

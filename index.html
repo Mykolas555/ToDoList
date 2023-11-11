@@ -28,11 +28,11 @@
                         
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td id="check"></td>
-                        <td id="subject">Padaryti "To Do lista"</td>
-                        <td id="priority">High</td>
+                <tbody id="tableBody">
+                    <tr id="firstRow">
+                        <td id="check"><button id="buttonCheck"><img src="/images/square-check-regular.svg" alt=""></button></td>
+                        <td class="subject">Padaryti "To Do lista"</td>
+                        <td id="priority"><p>High</p></td>
                         <td id="due"><input type="date"></td>
                         <td id="status">In progress</td>
                         <td id="percent"><div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
@@ -41,12 +41,15 @@
                         </td>
                         <td id="modified">2023-12-31</td>
                         <td id="delete">
-                            <button id="deleteButton">Delete</button>
+                            <button class="deleteButton">Delete</button>
                         </td>
                     </tr>
                     
                 </tbody>  
             </table>
+        </section>
+        <section class="komentarai">
+            <h6>Nelabai gavosi su check. Dblclick uzdetas ant check.</h6>
         </section>
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="/js/script.js"></script>
