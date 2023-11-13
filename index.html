@@ -12,6 +12,40 @@
         <header>
             <h1>To Do List</h1>
         </header>
+        <section id="inputForm">
+            <form action="NewLine">
+                <input type="text" placeholder="Subject">
+                <select id="PriorityOptions">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                  </select>
+                <button id="createNewLine">SUBMIT</button>
+            </form>
+        </section>
+        <main>
+            <table class="table">
+                <thead class="thead">
+                    <tr class="ToDoList__main">
+                        <th scope="col"><i class="fa-solid fa-chart-simple"></i></th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Due date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Percent Completed</th>
+                        <th scope="col">Modified on</th>
+                        <th scope="col">Delete task</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+
+        </main>
+
+
         <section>
             <button type="button" id="AddNewLine" class="btn btn-success">Add new line to the table</button>
             <table class="table">
@@ -24,8 +58,7 @@
                         <th scope="col">Status</th>
                         <th scope="col">Percent Completed</th>
                         <th scope="col">Modified on</th>
-                        <th scope="col">Delete task</th>
-                        
+                        <th scope="col">Delete task</th>                        
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -44,12 +77,8 @@
                             <button class="deleteButton">Delete</button>
                         </td>
                     </tr>
-                    
                 </tbody>  
             </table>
-        </section>
-        <section class="komentarai">
-            <h6>Pirma eilute gavos defaultine, nei uzsideda check, nei trinasi</h6>
         </section>
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="/js/script.js"></script>
