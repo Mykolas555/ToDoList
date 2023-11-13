@@ -1,0 +1,40 @@
+#inputForm {
+    background-color: grey;
+    padding:15px;
+    display: flex;
+    justify-content: center;
+}
+
+#inputName{
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    padding:5px;
+}
+
+#inputPriority{
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    padding:5px;
+}
+
+#inputDate{
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    padding:5px;
+}
+
+#submitButton{
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+#submitButton:hover{
+   background: black;
+   color: white;
+   transition: 0.5s;
+}

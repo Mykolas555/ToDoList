@@ -52,22 +52,18 @@ function updateTable() {
         background = 'green';
         break;
     }
-    console.log(background);
     row.style.backgroundColor = background;
     row.innerHTML = `
       <td><input type="checkbox" id="horns" name="horns" ${subject.percentCompleted === 100 ? 'checked' : ''} onchange="updateStatus(${subject.id}, this.checked)"/></td>
       <td>${subject.subject}</td>
-      <td style="background-color: ${background}; 
-                color: white; 
-                border-radius: 30px;
-                text-align: center">${subject.priority}</td>
+      <td>${subject.priority}</td>
       <td>${subject.dueDate}</td>
       <td>${subject.status}</td>
       <td><div class="progress" role="progressbar" aria-label="Completion progress" aria-valuenow="${subject.percentCompleted}" aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar bg-success" style="width: ${subject.percentCompleted}%"></div>
         </div></td>
       <td>${subject.modifiedOn}</td>
-      <td><button id="deleteButton" onclick="deleteTask(${subject.id})">Delete</button></td>
+      <td><button onclick="deleteTask(${subject.id})">Delete</button></td>
     `;
     tableBody.appendChild(row);
   });

@@ -14,19 +14,20 @@
         </header>
         <section id="inputForm">
             <form action="NewLine">
-                <input type="text" placeholder="Subject">
-                <select id="PriorityOptions">
+                <input type="text" placeholder="Subject" id="inputName">
+                <select id="inputPriority">
                     <option value="high">High</option>
                     <option value="medium">Medium</option>
                     <option value="low">Low</option>
                   </select>
-                <button id="createNewLine">SUBMIT</button>
+                <input type="date" id="inputDate">
+                <button type="submit" id="submitButton">Submit</button>
             </form>
         </section>
         <main>
             <table class="table">
                 <thead class="thead">
-                    <tr class="ToDoList__main">
+                    <tr class="ToDoList">
                         <th scope="col"><i class="fa-solid fa-chart-simple"></i></th>
                         <th scope="col">Subject</th>
                         <th scope="col">Priority</th>
@@ -41,45 +42,7 @@
 
                 </tbody>
             </table>
-
-
         </main>
-
-
-        <section>
-            <button type="button" id="AddNewLine" class="btn btn-success">Add new line to the table</button>
-            <table class="table">
-                <thead class="thead">
-                    <tr class="ToDoList__main">
-                        <th scope="col"><i class="fa-solid fa-chart-simple"></i></th>
-                        <th scope="col">Subject</th>
-                        <th scope="col">Priority</th>
-                        <th scope="col">Due date</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Percent Completed</th>
-                        <th scope="col">Modified on</th>
-                        <th scope="col">Delete task</th>                        
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr id="firstRow">
-                        <td id="check"><button id="buttonCheck"><img src="/images/square-check-regular.svg" alt=""></button></td>
-                        <td class="subject">Padaryti "To Do lista"</td>
-                        <td id="priority"><p>High</p></td>
-                        <td id="due"><input type="date"></td>
-                        <td id="status">In progress</td>
-                        <td id="percent"><div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar text-bg-warning" style="width:75%">75%</div>
-                          </div>
-                        </td>
-                        <td id="modified">2023-12-31</td>
-                        <td id="delete">
-                            <button class="deleteButton">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>  
-            </table>
-        </section>
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="/js/script.js"></script>
     </body>
