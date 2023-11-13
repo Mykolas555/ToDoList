@@ -1,51 +1,58 @@
 h1 {
   font-size: 80px;
-  text-align: center; }
+  text-align: center;
+}
 
 #inputForm {
   background-color: grey;
   padding: 15px;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
 
 #inputName {
   border: none;
   border-radius: 20px;
   text-align: center;
-  padding: 5px; }
+  padding: 5px;
+}
 
 #inputPriority {
   border: none;
   border-radius: 20px;
   text-align: center;
-  padding: 5px; }
+  padding: 5px;
+}
 
 #inputDate {
   border: none;
   border-radius: 20px;
   text-align: center;
-  padding: 5px; }
+  padding: 5px;
+}
 
 #submitButton {
   border: none;
   border-radius: 20px;
   text-align: center;
-  padding: 5px; }
+  padding: 5px;
+}
 
 #submitButton:hover {
   background: black;
   color: white;
-  transition: 0.5s; }
+  transition: 0.5s;
+}
 
 #deleteButton {
   border: none;
   color: white;
   background: red;
   border-radius: 20px;
-  width: 100px; }
+  width: 100px;
+}
 
 #deleteButton:hover {
   background: black;
-  transition: 0.5s; }
-
-/*# sourceMappingURL=style.css.map */
+  transition: 0.5s;
+}/*# sourceMappingURL=style.css.map */
