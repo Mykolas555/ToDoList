@@ -1,11 +1,14 @@
 const subjectInfo = [];
 
-// Load tasks from local storage on page load
 document.addEventListener('DOMContentLoaded', () => {
   const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
   subjectInfo.push(...storedTasks);
   updateTable();
 });
+
+function saveStorage(){
+  localStorage.setItem('tasks', JSON.stringify(subjectInfo));
+}
 
 function createSubject() {
   document.querySelector('form').addEventListener('submit', (e) => {
@@ -13,6 +16,10 @@ function createSubject() {
     const subject = document.getElementById('inputName').value;
     const priority = document.getElementById('inputPriority').value;
     const dueDate = document.getElementById('inputDate').value;
+    if (!subject.trim() || !priority.trim() || !dueDate.trim()) {
+      alert('Missing info ');
+      return;
+    }
     const getRandom = () => Math.random() * 1;
     const newSubject = {
       id: getRandom(),
@@ -24,10 +31,7 @@ function createSubject() {
       modifiedOn: new Date().toLocaleString(),
     };
     subjectInfo.push(newSubject);
-
-    // Save tasks to local storage
-    localStorage.setItem('tasks', JSON.stringify(subjectInfo));
-
+    saveStorage();
     updateTable();
     document.getElementById('inputName').value = '';
     document.getElementById('inputPriority').value = 'high';
@@ -52,11 +56,11 @@ function updateTable() {
         background = 'green';
         break;
     }
-    console.log(background);
+    const textDecorationStyle = subject.status === 'Done' ? 'text-decoration: line-through;' : '';
     row.style.backgroundColor = background;
     row.innerHTML = `
       <td><input type="checkbox" id="horns" name="horns" ${subject.percentCompleted === 100 ? 'checked' : ''} onchange="updateStatus(${subject.id}, this.checked)"/></td>
-      <td>${subject.subject}</td>
+      <td style="${textDecorationStyle}">${subject.subject}</td>
       <td style="background-color: ${background}; 
                 color: white; 
                 border-radius: 30px;
@@ -77,10 +81,7 @@ function deleteTask(id) {
   const index = subjectInfo.findIndex((subject) => subject.id === id);
   if (index !== -1) {
     subjectInfo.splice(index, 1);
-    
-    // Save tasks to local storage after deleting a task
-    localStorage.setItem('tasks', JSON.stringify(subjectInfo));
-
+    saveStorage();
     updateTable();
   }
 }
@@ -91,10 +92,7 @@ function updateStatus(id, isChecked) {
     subjectInfo[index].status = isChecked ? 'Done' : 'New';
     subjectInfo[index].percentCompleted = isChecked ? 100 : 0;
     subjectInfo[index].modifiedOn = new Date().toLocaleString();
-
-    // Save tasks to local storage after updating status
-    localStorage.setItem('tasks', JSON.stringify(subjectInfo));
-
+    saveStorage();
     updateTable();
   }
 }
